@@ -1,6 +1,6 @@
 PROJECT_ROOT = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
-OBJS = app.o
+OBJS = messaging_app.o
 
 ifeq ($(BUILD_MODE),debug)
 	CFLAGS += -g
@@ -13,9 +13,9 @@ else
     $(error Build mode $(BUILD_MODE) not supported by this Makefile)
 endif
 
-all:	app
+all:	messaging_app
 
-app:	$(OBJS)
+messaging_app:	$(OBJS)
 	$(CXX) $(LDFLAGS) -o $@ $^
 
 %.o:	$(PROJECT_ROOT)%.cpp
@@ -25,4 +25,4 @@ app:	$(OBJS)
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
 
 clean:
-	rm -fr app $(OBJS)
+	rm -fr messaging_app $(OBJS)

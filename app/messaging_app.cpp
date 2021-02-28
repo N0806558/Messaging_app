@@ -7,7 +7,8 @@
 
 using namespace std;
 
-void timer() { // http://www.cplusplus.com/reference/thread/this_thread/sleep_for/
+// Function to count down from 10
+void timer() {
 	for (int i=10; i>0; --i)
 	{
 		cout << i << std::endl;
@@ -53,13 +54,11 @@ int main() {
 	// Reads content of the account file -> Containing user password
 	getline(account,password);
 
-	cout<<"password entered is "<<pcheck<<endl;
-	cout<<"Actual password = "<<password<<endl;
+	cout<<"*Developer*Actual password = "<<password<<endl;
 
 	// User entering password loop
 	for (int i = 1; i < 4;i++)
 	{
-		cout<<i<<endl;
 		cout<<"Enter PASSWORD: "<<endl;
 		cin >>pcheck;
 
@@ -76,7 +75,6 @@ int main() {
 			cout<<"Too many attempts"<<endl;
 			timer(); // Calling timer function
 			i = 0;
-			cout<<i;
 		}
 
 		else
